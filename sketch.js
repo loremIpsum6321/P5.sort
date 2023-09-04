@@ -4,9 +4,9 @@ let bars = [];
 let barWidth = 5;
 
 function fillArray() {
-  bars = []; // Clear the previous bars
+  bars = []; 
   for (let i = 0; i < width / barWidth; i++) {
-    bars.push(new Bar(i * barWidth, height, barWidth, -Math.floor(random(0, height))));
+    bars.push(new Bar(i * barWidth, height, barWidth, -Math.floor(random(5, height))));
   }
 }
 
@@ -24,8 +24,6 @@ function setup() {
 function draw() {
   background(20);
   fill(255);
-  // textSize(50);
-  // text(barWidth, 243, 53);
   showBars(bars);
   sorter(bars);
 }
@@ -41,7 +39,6 @@ function sorter(array) {
     }
   }
   
-  // If no swaps were made in this pass, the array is sorted
   if (!swapped) {
     noLoop();
   }
